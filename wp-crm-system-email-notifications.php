@@ -3,7 +3,7 @@
     Plugin Name: WP-CRM System Email Notifications
     Plugin URL: https://www.wp-crm.com
     Description: Send notifications from WP-CRM to the assigned user's email address.
-    Version: 2.0.5
+    Version: 2.0.6
     Author: Scott DeLuzio
     Author URI: https://www.wp-crm.com
     Text Domain: wp-crm-system-email-notifications
@@ -14,7 +14,8 @@
 if( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
-define('WPCRM_EMAIL_NOTIFICATIONS',__FILE__);
+define( 'WPCRM_EMAIL_NOTIFICATIONS', __FILE__ );
+define( 'WPCRM_EMAIL_NOTIFICATIONS_VERSION', '2.0.6' );
 /* Start Updater */
 if(!defined('WPCRM_BASE_STORE_URL')){
 	define( 'WPCRM_BASE_STORE_URL', 'http://wp-crm.com' );
@@ -34,10 +35,10 @@ function wpcrm_email_notifications_updater() {
 
 	// setup the updater
 	$edd_updater = new WPCRM_SYSTEM_SL_Plugin_Updater( WPCRM_BASE_STORE_URL, __FILE__, array(
-			'version' 	=> '2.0.5', 				// current version number
-			'license' 	=> $license_key, 		// license key (used get_option above to retrieve from DB)
-			'item_name' => WPCRM_EMAIL_NOTIFICATIONS_NAME, 	// name of this plugin
-			'author' 	=> 'Scott DeLuzio'  // author of this plugin
+			'version' 	=> WPCRM_EMAIL_NOTIFICATIONS_VERSION,	// current version number
+			'license' 	=> $license_key,						// license key (used get_option above to retrieve from DB)
+			'item_name' => WPCRM_EMAIL_NOTIFICATIONS_NAME,		// name of this plugin
+			'author' 	=> 'Scott DeLuzio'						// author of this plugin
 		)
 	);
 
