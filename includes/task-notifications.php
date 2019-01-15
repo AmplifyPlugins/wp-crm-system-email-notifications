@@ -133,7 +133,7 @@ function wpcrm_notify_email_tasks( $ID, $post ){
 		'id'		=> $ID,
 		'post'		=> $post,
 	);
-	$send_email = apply_filters( 'wp_crm_system_email_notifications_opportunity', $send_email );
+	$send_email = apply_filters( 'wp_crm_system_email_notifications_task', $send_email );
 	if( $send_email['send'] ){
 		wp_mail( $send_email['to'], $send_email['subject'], $send_email['message'], $send_email['headers'] );
 	}
